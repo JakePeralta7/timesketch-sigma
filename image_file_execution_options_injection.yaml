@@ -1,0 +1,30 @@
+title: Image File Execution Options Injection
+id: 10a4fb8c-29d5-4eb6-905f-13d6a553d471
+description: Detects Image File Execution Options Injection using the Debugger value
+references:
+  - https://attack.mitre.org/techniques/T1546/012/
+author: Elad Levi
+date: 2025/05/20
+modified: 2025/05/20
+status: stable
+falsepositives: unknown
+level: informational
+tags:
+    - attack.privelege_escalation
+    - attack.persistence
+    - T1546.012
+logsource:
+    category: registry
+    product: plaso
+falsepositives:
+    - Unknown
+status: stable
+level: medium
+detection:
+    registry:
+        - data_type: "windows:registry:key_value"
+    ifeo:
+        - key_path: "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options"
+    debugger:
+        - values: "*Debugger*"
+    condition: registry and ifeo and debugger
