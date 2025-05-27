@@ -2,7 +2,7 @@ title: SysmonDrv Minifilter Driver was Unloaded
 id: 10a4fb8c-29d5-4eb6-905f-13d6a553d473
 description: This rule detects attempts to unload the Sysmon minifilter driver (SysmonDrv), which disables Sysmon's event logging and can be exploited for defense evasion.
 references:
-  - https://attack.mitre.org/techniques/T1546/012/
+  - https://attack.mitre.org/techniques/T1562/006/
 author: Elad Levi
 date: 2025/05/27
 modified: 2025/05/27
